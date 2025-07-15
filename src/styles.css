@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#game-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8rem;
+}
+
+#left-section, #right-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+#left-board, #right-board {
+    display: grid;
+    grid-template-columns: repeat(11, 2.5rem);
+    grid-template-rows: repeat(14, 2.5rem);
+}
+
+#left-grid, #right-grid {
+    display: grid;
+    grid-column: 2 / span 10;
+    grid-row: 2 / span 10;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    border: 2px solid black;
+}
+
+.cell {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid black;
+}
+
+.cell:hover {
+    border: 1px solid black;
+}
+
+.foggy {
+    background-color: lightgray;
+}
+
+.ship {
+    background-color: gray;
+}
+
+.sunk {
+    background-color: firebrick;
+}
+
+.placing {
+    background-color: yellow;
+}
+
+.peg {
+    display: none;
+}
+
+.attacked .peg {
+    display: block;
+    height: 0.8rem;
+    width: 0.8rem;
+    border-radius: 1rem;
+    border: 0.1rem solid gray;
+    background-color: lightgray;
+}
+
+.ship .peg {
+    border: 0.1rem solid maroon;
+    background-color: red;
+}
+
+.edge {
+    text-align: center;
+    line-height: 2.5rem;
+}
+
+#ready-button {
+    grid-column: 6 / 8;
+    grid-row: 13 / 14;
+}
+
+#reset-button {
+    grid-column: 6 / 8;
+    grid-row: 14 / 15;
+}
